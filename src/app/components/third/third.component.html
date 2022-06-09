@@ -1,0 +1,64 @@
+<h2>
+  1. API
+  <a href="https://jsonplaceholder.typicode.com/users"
+    >https://jsonplaceholder.typicode.com/users</a
+  >
+</h2>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">ID:</th>
+      <th scope="col">Name:</th>
+      <th scope="col">Username:</th>
+      <th scope="col">Email:</th>
+      <th scope="col">Address:</th>
+      <th scope="col">Phone:</th>
+      <th scope="col">Website:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let newUserArr of newUsersArr">
+      <th scope="row">{{ newUserArr.id }}</th>
+      <th scope="row">{{ newUserArr.name }}</th>
+      <th scope="row">{{ newUserArr.username }}</th>
+      <th scope="row">{{ newUserArr.email }}</th>
+      <th scope="row">{{ newUserArr.address.suite }}</th>
+      <th scope="row">{{ newUserArr.phone }}</th>
+      <th scope="row">{{ newUserArr.website }}</th>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+<h2>
+  2. API
+  <a href="https://digimon-api.vercel.app/api/digimon"
+    >https://digimon-api.vercel.app/api/digimon/</a
+  >
+</h2>
+
+<div class="input-group mb-3">
+  <input
+    type="text"
+    class="form-control"
+    placeholder="Ingrese el nombre de un digimon"
+    #termino
+    (keyup)="searchDigimons(termino.value)"
+  />
+</div>
+
+<div
+  *ngFor="let digimon of digimons"
+  class="card tex-center"
+  style="width: 18rem"
+>
+  <img [src]="digimon.img" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <p class="card-text">
+      {{ digimon.name }}
+      <strong>Level: {{ digimon.level }}</strong>
+    </p>
+  </div>
+</div>
+

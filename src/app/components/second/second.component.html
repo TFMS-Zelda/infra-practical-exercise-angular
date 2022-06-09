@@ -1,0 +1,23 @@
+<div class="alert alert-info">
+  <h1 class="display-4">Tu saludo es: {{ saludoHijo }}</h1>
+</div>
+<hr />
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr class="table-dark">
+      <th scope="col">ID:</th>
+      <th scope="col">Name:</th>
+      <th scope="col">Type:</th>
+      <th scope="col">Value:</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let movieArr of moviesArr">
+      <th scope="row">{{ movieArr.id }}</th>
+      <th scope="row">{{ movieArr.name }}</th>
+      <th scope="row">{{ movieArr.type }}</th>
+      <th scope="row">{{ movieArr.value }}</th>
+    </tr>
+  </tbody>
+</table>

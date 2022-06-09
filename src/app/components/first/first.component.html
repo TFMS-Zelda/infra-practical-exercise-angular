@@ -1,0 +1,16 @@
+<div class="my-2">
+  <div class="input-group mb-3">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Ingresa tu saludo"
+      #termino
+    />
+  </div>
+  <div class="text-center">
+    <button class="btn btn-primary" (click)="enviarSaludo(termino.value)">Enviar</button>
+  </div>
+</div>
+
+<!-- segundo componente donde se mostrara el saludo -->
+<app-second [saludoHijo]="saludo"></app-second>
